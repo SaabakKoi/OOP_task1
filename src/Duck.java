@@ -1,23 +1,27 @@
 import java.time.LocalDate;
 import java.util.List;
 
-public class Duck extends Animal{
+public class Duck extends Animal implements Goable, Flyable, Swimable{
     public Duck(String name, LocalDate birthday, List<String> vaccinations, String illness, String owner) {
         super(name, birthday, vaccinations, illness, owner);
     }
 
+
     @Override
-    public void toGo() {
-        System.out.println("Duck slowly walking");
+    public double fly() {
+        System.out.printf("%s flying", type);
+        return 36;
     }
 
     @Override
-    public void fly() {
-        System.out.println("Duck flying");
+    public double swim() {
+        System.out.printf("%s is swimming", type);
+        return 7;
     }
 
     @Override
-    public void swim() {
-        System.out.println("Try to catch Duck, while she's swimming");
+    public double run() {
+        System.out.printf("%s slowly walking", type);
+        return 0;
     }
 }

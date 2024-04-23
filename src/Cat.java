@@ -1,7 +1,7 @@
 import java.time.LocalDate;
 import java.util.List;
 
-public class Cat extends Animal{
+public class Cat extends Animal implements Goable, Swimable {
 
     private int countLegs;
 
@@ -14,17 +14,17 @@ public class Cat extends Animal{
         return countLegs;
     }
 
-    @Override
-    public void toGo() {
-        System.out.println("Cat running");
-    }
 
     @Override
-    public void swim() {
-        System.out.println("Cat don't like but swimming");
+    public double swim() {
+        System.out.printf("%s don't like but swimming", type);
+        return 3;
     }
 
+
     @Override
-    public void fly() {
+    public double run() {
+        System.out.printf("%s running", type);
+        return 9;
     }
 }

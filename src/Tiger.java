@@ -1,22 +1,22 @@
 import java.time.LocalDate;
 import java.util.List;
 
-public class Tiger extends Animal{
+public class Tiger extends Animal implements Goable, Swimable{
     public Tiger(String name, LocalDate birthday, List<String> vaccinations, String illness, String owner) {
         super(name, birthday, vaccinations, illness, owner);
     }
 
-    @Override
-    public void toGo() {
-        System.out.println("Tiger running");
-    }
 
     @Override
-    public void swim() {
-        System.out.println("Tiger swimming");
+    public double swim() {
+        System.out.printf("%s swimming", type);
+        return 4;
     }
 
+
     @Override
-    public void fly() {
+    public double run() {
+        System.out.printf("%s running", type);;
+        return 26;
     }
 }
